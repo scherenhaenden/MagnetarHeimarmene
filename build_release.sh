@@ -19,12 +19,17 @@ if [ ! -d "contents" ]; then
 fi
 
 # 2. Extract Version
-# Using python for reliable JSON parsing
-if command -v python3 &> /dev/null; then
+# Prefer jq for JSON parsing; fall back to Python, then a minimal grep-based approach.
+if command -v jq &> /dev/null; then
+    VERSION=$(jq -r '.KPlugin.Version' metadata.json)
+elif command -v python3 &> /dev/null; then
     VERSION=$(python3 -c "import json; print(json.load(open('metadata.json'))['KPlugin']['Version'])")
+elif command -v python &> /dev/null; then
+    VERSION=$(python -c "import json; print(json.load(open('metadata.json'))['KPlugin']['Version'])")
 else
-    # Fallback to grep if python3 is not available
-    VERSION=$(grep -o '"Version": "[^"]*"' metadata.json | cut -d'"' -f4)
+    # Last-resort fallback: regex-based extraction; may break if metadata.json layout changes.
+    # Search for "Version" only after "KPlugin" to avoid false matches.
+    VERSION=$(awk '/"KPlugin"/{flag=1} flag && /"Version"/{print $0; exit}' metadata.json | sed -E 's/.*"Version": *"([^"]*)".*/\1/')
 fi
 
 if [ -z "$VERSION" ]; then
