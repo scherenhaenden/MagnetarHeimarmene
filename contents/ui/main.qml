@@ -75,7 +75,7 @@ PlasmoidItem {
                             // Since we can't see the output, we will try to display generic info if model is empty.
 
                             Text {
-                                text: model.display ? model.display : "Event"
+                                text: (typeof display !== "undefined" && display) ? display : "Event"
                                 color: PlasmaCore.Theme.textColor
                             }
                         }

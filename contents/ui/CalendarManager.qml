@@ -5,7 +5,7 @@ Item {
     id: root
 
     // Expose the model
-    property alias model: calendarModel
+    property var model: calendarModel
 
     // The current date we are looking at
     property date currentDate: new Date()
@@ -17,15 +17,7 @@ Item {
         // Note: 'date' is the standard property for the reference date in many calendar models
         // If this specific version uses a different property (e.g. 'displayedDate'), it will need adjustment.
         // But this addresses the "not wired" issue.
-    }
-
-    // Bind the calendar model's reference date to the current date.
-    // If the API changes (e.g. using "displayedDate" instead of "date"),
-    // update the property name here accordingly.
-    Binding {
-        target: calendarModel
-        property: "date"
-        value: root.currentDate
+        date: root.currentDate
     }
 
     function nextMonth() {
