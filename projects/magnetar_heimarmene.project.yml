@@ -1,0 +1,75 @@
+metadata:
+  name: MagnetarHeimarmene
+  description: Unified Chronological & Atmospheric Awareness for Plasma 6
+  start_date: '2024-05-22'
+
+stakeholders:
+  - name: User
+    role: Product Owner
+  - name: Jules
+    role: Lead Engineer (AI)
+
+milestones:
+  - id: ms-01
+    name: "Phase A: The Skeleton"
+    target_date: TBD
+  - id: ms-02
+    name: "Phase B: The Connection"
+    target_date: TBD
+  - id: ms-03
+    name: "Phase C: The Atmosphere"
+    target_date: TBD
+  - id: ms-04
+    name: "Phase D: The Unification"
+    target_date: TBD
+
+tasks:
+  - id: task-101
+    milestone: ms-01
+    title: Initialize metadata.json
+    owner: Unassigned
+    state: planned
+  - id: task-102
+    milestone: ms-01
+    title: Create main.qml skeleton
+    owner: Unassigned
+    state: planned
+  - id: task-201
+    milestone: ms-02
+    title: Implement CalendarModel
+    owner: Unassigned
+    state: planned
+  - id: task-202
+    milestone: ms-02
+    title: Display Event Titles
+    owner: Unassigned
+    state: planned
+  - id: task-301
+    milestone: ms-03
+    title: Connect Weather DataEngine
+    owner: Unassigned
+    state: planned
+  - id: task-302
+    milestone: ms-03
+    title: Overlay Temperature
+    owner: Unassigned
+    state: planned
+  - id: task-401
+    milestone: ms-04
+    title: Apply Magnetar Theme
+    owner: Unassigned
+    state: planned
+  - id: task-402
+    milestone: ms-04
+    title: Implement Event-Weather Logic
+    owner: Unassigned
+    state: planned
+
+risks:
+  - description: Akonadi/PIM integration complexity in Plasma 6
+    mitigation: Use standard org.kde.plasma.PimCalendars DataSource
+  - description: Google Auth changes
+    mitigation: Rely on kaccounts-integration
+
+reporting:
+  auto_update: true
