@@ -33,7 +33,7 @@ Magnetar Heimarmene unifies:
 ### Installation
 
 1.  Go to the [Releases](https://github.com/scherenhaenden/MagnetarHeimarmene/releases) page.
-2.  Download the latest `.plasmoid` file (e.g., `MagnetarHeimarmene-v0.1.0.plasmoid`).
+2.  Download the latest .plasmoid file (e.g., MagnetarHeimarmene-vX.Y.Z.plasmoid).
 3.  Install it using the command line:
     ```bash
     kpackagetool6 --install MagnetarHeimarmene-v0.1.0.plasmoid
