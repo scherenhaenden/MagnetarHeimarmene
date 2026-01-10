@@ -1,0 +1,27 @@
+metadata:
+  name: Project Name
+  description: Brief description
+  start_date: 'YYYY-MM-DD'
+
+stakeholders:
+  - name: Name
+    role: Role
+
+milestones:
+  - id: ms-01
+    name: Milestone Name
+    target_date: 'YYYY-MM-DD'
+
+tasks:
+  - id: task-01
+    milestone: ms-01
+    title: Task Title
+    owner: Name
+    state: planned
+
+risks:
+  - description: Risk description
+    mitigation: Mitigation strategy
+
+reporting:
+  auto_update: true
