@@ -13,12 +13,12 @@ PlasmoidItem {
     // The main view when the widget is expanded
     fullRepresentation: PlasmaComponents.Panel {
         // Use gridUnit for resolution independence instead of fixed pixels
-        implicitWidth: PlasmaCore.Units.gridUnit * 16
-        implicitHeight: PlasmaCore.Units.gridUnit * 22
+        implicitWidth: PlasmaCore.Units.gridUnit * 20
+        implicitHeight: PlasmaCore.Units.gridUnit * 30
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing: PlasmaCore.Units.smallSpacing * 2
+            anchors.fill: parent
+            anchors.margins: PlasmaCore.Units.smallSpacing
 
             Text {
                 text: "Magnetar Heimarmene"
@@ -28,28 +28,68 @@ PlasmoidItem {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            // Status Indicator (Task 102)
-            Rectangle {
-                id: statusIndicator
-                implicitWidth: PlasmaCore.Units.gridUnit
-                implicitHeight: PlasmaCore.Units.gridUnit
-                radius: width / 2
-                color: PlasmaCore.Theme.positiveBackgroundColor // Green means system is nominal
-                Layout.alignment: Qt.AlignHCenter
+            // Calendar Manager (Data Source)
+            CalendarManager {
+                id: calendarManager
+            }
 
+            // Status Indicator (Task 102) - Kept for reference but smaller
+            RowLayout {
+                Layout.alignment: Qt.AlignHCenter
+                spacing: PlasmaCore.Units.smallSpacing
+
+                Rectangle {
+                    implicitWidth: PlasmaCore.Units.gridUnit * 0.5
+                    implicitHeight: PlasmaCore.Units.gridUnit * 0.5
+                    radius: width / 2
+                    color: PlasmaCore.Theme.positiveBackgroundColor
+                }
                 Text {
-                    anchors.centerIn: parent
-                    text: "✓"
-                    color: PlasmaCore.Theme.textColor
-                    font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize
+                    text: "System Nominal"
+                    color: PlasmaCore.Theme.complementaryTextColor
+                    font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 0.8
                 }
             }
 
-            Text {
-                text: "System Nominal"
-                color: PlasmaCore.Theme.complementaryTextColor
-                font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize
-                Layout.alignment: Qt.AlignHCenter
+            PlasmaComponents.ScrollView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                // Placeholder for the list of events
+                ListView {
+                    id: eventList
+                    model: calendarManager.model
+                    clip: true
+
+                    delegate: Item {
+                        width: ListView.view.width
+                        height: PlasmaCore.Units.gridUnit * 2
+
+                        ColumnLayout {
+                            anchors.fill: parent
+                            anchors.margins: PlasmaCore.Units.smallSpacing
+
+                            // Note: We need to verify the roles provided by CalendarModel.
+                            // Common roles: display, event, startDate, endDate, etc.
+                            // Assuming 'display' or similar for now.
+                            // Since we can't see the output, we will try to display generic info if model is empty.
+
+                            Text {
+                                text: (typeof display !== "undefined" && display) ? display : "Event"
+                                color: PlasmaCore.Theme.textColor
+                            }
+                        }
+                    }
+
+                    // Add a placeholder if empty
+                    Text {
+                        anchors.centerIn: parent
+                        text: "No events found"
+                        visible: eventList.count === 0
+                        color: PlasmaCore.Theme.disabledTextColor
+                        z: 1 // Ensure it's on top if needed, though usually fine
+                    }
+                }
             }
         }
     }
