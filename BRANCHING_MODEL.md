@@ -4,7 +4,7 @@ This project follows a simplified GitFlow.
 
 ## Branches
 
-*   **`master`:** The stable release branch.
+*   **`master`:** The stable release branch. Pushing to this branch triggers the release workflow, which builds and uploads the `.plasmoid` artifact.
 *   **`feature/<name>`:** New features.
 *   **`fix/<name>`:** Bug fixes.
 *   **`chore/<name>`:** Maintenance tasks.
