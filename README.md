@@ -36,7 +36,7 @@ Magnetar Heimarmene unifies:
 2.  Download the latest .plasmoid file (e.g., MagnetarHeimarmene-vX.Y.Z.plasmoid).
 3.  Install it using the command line:
     ```bash
-    kpackagetool6 --install MagnetarHeimarmene-v0.1.0.plasmoid
+    kpackagetool6 --install MagnetarHeimarmene-vX.Y.Z.plasmoid
     ```
     *Or use the "Install from File..." option in Plasma Widget Explorer.*
 
