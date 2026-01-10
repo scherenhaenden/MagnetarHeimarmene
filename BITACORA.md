@@ -24,12 +24,12 @@
 **Author:** Jules (AI Agent)
 **Entry:** Documentation Synchronization and Release Pipeline Setup.
 *   **Sync:** Updated `projects/magnetar_heimarmene.project.yml`, `PLAN.md`, and `STATUS.md` to correctly reflect the completion of Phase A (`ms-01`) and tasks `task-101`, `task-102`.
-*   **Pipeline:** Established local release pipeline (`build_release.sh`) and GitHub Actions workflow (`.github/workflows/release.yml`) for automated packaging.
+*   **Pipeline:** Established local release pipeline (`build_release.sh`) and GitHub Actions workflow (`.github/workflows/release.yaml`) for automated packaging.
 ---
 **Timestamp:** 2024-05-23 10:00 UTC
 **Author:** Jules (AI Agent)
 **Entry:** Release Workflow and Documentation Update.
-*   **Workflow:** Created `.github/workflows/release.yml` for automated releases on push to master.
+*   **Workflow:** Created `.github/workflows/release.yaml` for automated releases on push to master.
 *   **Documentation:** Updated `README.md` to include installation instructions and build badge. Updated `BRANCHING_MODEL.md` to reference the release workflow.
 ---
 **Timestamp:** 2026-01-10 15:45 UTC
