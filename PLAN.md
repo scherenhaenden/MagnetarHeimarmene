@@ -6,7 +6,7 @@
 
 | Milestone ID | Name | Target Date | Description | Completion Criteria |
 | :--- | :--- | :--- | :--- | :--- |
-| `ms-01` | Phase A: The Skeleton | TBD | Initialize project structure and basic QML rendering. | `metadata.json` created, `main.qml` loads with status indicator. |
+| `ms-01` | Phase A: The Skeleton | 2024-05-22 | Initialize project structure and basic QML rendering. | `metadata.json` created, `main.qml` loads with status indicator. |
 | `ms-02` | Phase B: The Connection | TBD | Implement Google Calendar integration via KDE Online Accounts. | Display a list of event titles from the configured Google account. |
 | `ms-03` | Phase C: The Atmosphere | TBD | Connect to Weather DataEngine and overlay data. | Temperature integers displayed on the Event List. |
 | `ms-04` | Phase D: The Unification | TBD | Apply Magnetar visual theme and unify logic. | Visual theme applied, "Rain Umbrella" logic implemented. |
@@ -15,8 +15,8 @@
 
 | Task ID | Milestone | Title | Owner | Effort (pts) | State | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `task-101` | `ms-01` | Initialize `metadata.json` | Unassigned | 1 | `planned` | Plasma 6 specifications. |
-| `task-102` | `ms-01` | Create `main.qml` skeleton | Unassigned | 2 | `planned` | Simple Red/Green status indicator. |
+| `task-101` | `ms-01` | Initialize `metadata.json` | Jules | 1 | `done` | Plasma 6 specifications. |
+| `task-102` | `ms-01` | Create `main.qml` skeleton | Jules | 2 | `done` | Simple Red/Green status indicator. |
 | `task-201` | `ms-02` | Implement `CalendarModel` | Unassigned | 5 | `planned` | Use `org.kde.plasma.calendar`. |
 | `task-202` | `ms-02` | Display Event Titles | Unassigned | 3 | `planned` | List events from Google account. |
 | `task-301` | `ms-03` | Connect Weather DataEngine | Unassigned | 3 | `planned` | `org.kde.weather` or Plasma 6 provider. |
@@ -27,9 +27,9 @@
 ## 3. Effort Summary
 
 *   **Total effort:** 26 pts
-*   **Completed:** 0 pts
+*   **Completed:** 3 pts
 *   **In progress:** 0 pts
-*   **Remaining:** 26 pts
+*   **Remaining:** 23 pts
 
 ## 4. State Definitions
 
