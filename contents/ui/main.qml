@@ -112,6 +112,15 @@ PlasmoidItem {
                             }
                         }
                     }
+
+                    // Add a placeholder if empty
+                    // Using overlay property from Flickable
+                    overlay: Text {
+                        anchors.centerIn: parent
+                        text: "No events found"
+                        visible: eventList.count === 0
+                        color: PlasmaCore.Theme.disabledTextColor
+                    }
                 }
             }
         }
