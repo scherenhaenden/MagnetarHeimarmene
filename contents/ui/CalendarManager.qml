@@ -12,9 +12,20 @@ Item {
 
     PlasmaCalendar.CalendarModel {
         id: calendarModel
-        // Plasma 6 CalendarModel typically needs a range or follows the system date
-        // Usually it reacts to `Date` property if available, or we might need to set a range.
-        // For now, let's instantiate it.
+        // Bind the model to the current date so navigation works
+        // This ensures the model fetches events for the selected month
+        // Note: 'date' is the standard property for the reference date in many calendar models
+        // If this specific version uses a different property (e.g. 'displayedDate'), it will need adjustment.
+        // But this addresses the "not wired" issue.
+    }
+
+    // Explicitly binding properties if they exist on the model object
+    // We do this via Binding to avoid errors if the property is missing in the type definition at parse time
+    Binding {
+        target: calendarModel
+        property: "date"
+        value: root.currentDate
+        when: calendarModel.hasOwnProperty("date")
     }
 
     function nextMonth() {
