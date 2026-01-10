@@ -3,13 +3,13 @@
 # Magnetar Release Pipeline
 # Packages the plasmoid for distribution
 
-set -euo pipefail
+set -e
 
 echo "Initializing Release Pipeline..."
 
 # 1. Verification
 if [ ! -f "metadata.json" ]; then
-    echo "Error: metadata.json not found." >&2
+    echo "Error: metadata.json not found."
     exit 1
 fi
 
@@ -28,7 +28,8 @@ elif command -v python &> /dev/null; then
     VERSION=$(python -c "import json; print(json.load(open('metadata.json'))['KPlugin']['Version'])")
 else
     # Last-resort fallback: regex-based extraction; may break if metadata.json layout changes.
-    VERSION=$(grep -o '"Version": *"[^"]*"' metadata.json | sed -E 's/.*"Version": *"([^"]*)".*/\1/')
+    # Search for "Version" only after "KPlugin" to avoid false matches.
+    VERSION=$(awk '/"KPlugin"/{flag=1} flag && /"Version"/{print $0; exit}' metadata.json | sed -E 's/.*"Version": *"([^"]*)".*/\1/')
 fi
 
 if [ -z "$VERSION" ]; then
