@@ -12,3 +12,11 @@
 *   Defined initial milestones based on the "MagnetarHeimarmene" V1.0 specification.
 *   Established file structure compliance.
 ---
+**Timestamp:** 2024-05-22 10:15 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Implementation of Phase A (Skeleton) and Documentation Updates.
+*   **Version Update:** Updated `metadata.json` version to `0.1.0` to reflect Pre-Alpha status.
+*   **Documentation Refine:** Rewrote `README.md` to be user-centric and remove internal canonical model details from the public face.
+*   **Code Implementation:** Created `contents/ui/main.qml` with a basic system status indicator (Green/Nominal), fulfilling `task-102`.
+*   **Structure:** Validated and created directory structure `contents/ui/` for Plasma Applet compliance.
+---
