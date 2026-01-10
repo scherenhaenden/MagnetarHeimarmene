@@ -87,6 +87,7 @@ PlasmoidItem {
                         text: "No events found"
                         visible: eventList.count === 0
                         color: PlasmaCore.Theme.disabledTextColor
+                        z: 1 // Ensure it's on top if needed, though usually fine
                     }
                 }
             }
