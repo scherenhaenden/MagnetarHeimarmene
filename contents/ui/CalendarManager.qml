@@ -12,15 +12,11 @@ Item {
 
     PlasmaCalendar.CalendarModel {
         id: calendarModel
-        // Bind the model to the current date so navigation works
-        // This ensures the model fetches events for the selected month
-        // Note: 'date' is the standard property for the reference date in many calendar models
-        // If this specific version uses a different property (e.g. 'displayedDate'), it will need adjustment.
-        // But this addresses the "not wired" issue.
+        // The standard Plasma CalendarModel uses 'date' property to determine the loaded range (usually month).
+        // Connecting it to our currentDate ensures the model contains the data we are looking for.
     }
 
-    // Explicitly binding properties if they exist on the model object
-    // We do this via Binding to avoid errors if the property is missing in the type definition at parse time
+    // Explicit binding to ensure the C++ property is updated
     Binding {
         target: calendarModel
         property: "date"
@@ -28,15 +24,16 @@ Item {
         when: calendarModel.hasOwnProperty("date")
     }
 
-    function nextMonth() {
+    // Helper functions for navigation (can be connected to buttons in main.qml later)
+    function nextDay() {
         var d = new Date(root.currentDate);
-        d.setMonth(d.getMonth() + 1);
+        d.setDate(d.getDate() + 1);
         root.currentDate = d;
     }
 
-    function prevMonth() {
+    function prevDay() {
         var d = new Date(root.currentDate);
-        d.setMonth(d.getMonth() - 1);
+        d.setDate(d.getDate() - 1);
         root.currentDate = d;
     }
 }
