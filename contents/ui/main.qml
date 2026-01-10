@@ -1,5 +1,8 @@
 import QtQuick
+import QtQuick.Layouts
 import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components 3.0 as PlasmaComponents
 
 PlasmoidItem {
     id: root
@@ -8,58 +11,45 @@ PlasmoidItem {
     preferredRepresentation: fullRepresentation
 
     // The main view when the widget is expanded
-    fullRepresentation: Item {
-        width: root.availableWidth
-        height: root.availableHeight
+    fullRepresentation: PlasmaComponents.Panel {
+        // Use gridUnit for resolution independence instead of fixed pixels
+        implicitWidth: PlasmaCore.Units.gridUnit * 16
+        implicitHeight: PlasmaCore.Units.gridUnit * 22
 
-        Rectangle {
-            anchors.fill: parent
-            color: "transparent"
+        ColumnLayout {
+            anchors.centerIn: parent
+            spacing: PlasmaCore.Units.smallSpacing * 2
 
-            // Background with some opacity
-            Rectangle {
-                anchors.fill: parent
-                color: Qt.rgba(0, 0, 0, 0.5)
-                radius: 10
+            Text {
+                text: "Magnetar Heimarmene"
+                color: PlasmaCore.Theme.textColor
+                font.bold: true
+                font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 1.5
+                Layout.alignment: Qt.AlignHCenter
             }
 
-            Column {
-                anchors.centerIn: parent
-                spacing: 10
+            // Status Indicator (Task 102)
+            Rectangle {
+                id: statusIndicator
+                implicitWidth: PlasmaCore.Units.gridUnit
+                implicitHeight: PlasmaCore.Units.gridUnit
+                radius: width / 2
+                color: PlasmaCore.Theme.positiveBackgroundColor // Green means system is nominal
+                Layout.alignment: Qt.AlignHCenter
 
                 Text {
-                    text: "Magnetar Heimarmene"
-                    color: "white"
-                    font.bold: true
-                    font.pixelSize: 18
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.centerIn: parent
+                    text: "✓"
+                    color: PlasmaCore.Theme.textColor
+                    font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize
                 }
+            }
 
-                // Status Indicator (Task 102)
-                Rectangle {
-                    id: statusIndicator
-                    width: 20
-                    height: 20
-                    radius: 10
-                    color: "green" // Green means system is nominal
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "✓"
-                        color: "white"
-                        font.pixelSize: 12
-                    }
-                }
-
-                Text {
-                    text: "System Nominal"
-                    color: "#aaaaaa"
-                    font.pixelSize: 12
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
+            Text {
+                text: "System Nominal"
+                color: PlasmaCore.Theme.complementaryTextColor
+                font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }
