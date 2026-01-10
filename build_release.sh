@@ -3,7 +3,7 @@
 # Magnetar Release Pipeline
 # Packages the plasmoid for distribution
 
-set -e
+set -euo pipefail
 
 echo "Initializing Release Pipeline..."
 
