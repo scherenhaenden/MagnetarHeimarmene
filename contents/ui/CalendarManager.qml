@@ -19,13 +19,13 @@ Item {
         // But this addresses the "not wired" issue.
     }
 
-    // Explicitly binding properties if they exist on the model object
-    // We do this via Binding to avoid errors if the property is missing in the type definition at parse time
+    // Bind the calendar model's reference date to the current date.
+    // If the API changes (e.g. using "displayedDate" instead of "date"),
+    // update the property name here accordingly.
     Binding {
         target: calendarModel
         property: "date"
         value: root.currentDate
-        when: calendarModel.hasOwnProperty("date")
     }
 
     function nextMonth() {
