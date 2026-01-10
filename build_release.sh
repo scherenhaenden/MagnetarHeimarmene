@@ -9,7 +9,7 @@ echo "Initializing Release Pipeline..."
 
 # 1. Verification
 if [ ! -f "metadata.json" ]; then
-    echo "Error: metadata.json not found."
+    echo "Error: metadata.json not found." >&2
     exit 1
 fi
 
