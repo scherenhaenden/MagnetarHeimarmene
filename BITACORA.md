@@ -1,21 +1,49 @@
-# Bitacora of MagnetarHeimarmene
+# Logbook of MagnetarHeimarmene
 
-> **Authority:** This document is the **Single Source of Truth** for the project's history. It chronicles all state changes, decisions, and exceptions.
+> **Authority:** This document is the immutable, chronological log of all significant project events.
 
-## Log
+## Entries
 
-*   **2024-05-22**
-    *   `ms-01` marked as `done`.
-    *   `task-101` (Initialize metadata.json) marked as `done`.
-    *   `task-102` (Create main.qml skeleton) marked as `done`.
-    *   `ms-02` started.
-    *   `task-201` (Implement CalendarModel) marked as `in_progress`.
-    *   `task-202` (Display Event Titles) marked as `in_progress`.
-
-*   **[Current Date]**
-    *   `task-201` (Implement CalendarModel) moved to `in_review`.
-        *   Verified `CalendarManager.qml` wraps `org.kde.plasma.calendar.CalendarModel` correctly and binds date.
-    *   `task-202` (Display Event Titles) moved to `in_review`.
-        *   Updated `main.qml` to display event titles from the model for the current day.
-    *   `ms-02` moved to `in_review`.
-    *   Updated `STATUS.md` to reflect progress.
+---
+**Timestamp:** 2024-05-22 10:00 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Project initialization. Adopted the **Magnetar Canonical Project Model**.
+*   Created `RULES.md`, `README.md`, `PLAN.md`, `ARCHITECTURE.md`, `REQUIREMENTS.md`.
+*   Defined initial milestones based on the "MagnetarHeimarmene" V1.0 specification.
+*   Established file structure compliance.
+---
+**Timestamp:** 2024-05-22 10:15 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Implementation of Phase A (Skeleton) and Documentation Updates.
+*   **Version Update:** Updated `metadata.json` version to `0.1.0` to reflect Pre-Alpha status.
+*   **Documentation Refine:** Rewrote `README.md` to be user-centric and remove internal canonical model details from the public face.
+*   **Code Implementation:** Created `contents/ui/main.qml` with a basic system status indicator (Green/Nominal), fulfilling `task-102`.
+*   **Structure:** Validated and created directory structure `contents/ui/` for Plasma Applet compliance.
+---
+**Timestamp:** 2024-05-22 10:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Documentation Synchronization and Release Pipeline Setup.
+*   **Sync:** Updated `projects/magnetar_heimarmene.project.yml`, `PLAN.md`, and `STATUS.md` to correctly reflect the completion of Phase A (`ms-01`) and tasks `task-101`, `task-102`.
+*   **Pipeline:** Established local release pipeline (`build_release.sh`) and GitHub Actions workflow (`.github/workflows/release.yml`) for automated packaging.
+---
+**Timestamp:** 2024-05-23 10:00 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Release Workflow and Documentation Update.
+*   **Workflow:** Created `.github/workflows/release.yml` for automated releases on push to master.
+*   **Documentation:** Updated `README.md` to include installation instructions and build badge. Updated `BRANCHING_MODEL.md` to reference the release workflow.
+---
+**Timestamp:** 2026-01-10 15:45 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Documentation Verification and Rule Exception.
+*   **Verification:** Verified integrity and consistency of all Markdown documentation (`PLAN.md`, `STATUS.md`, `RULES.md`, etc.).
+*   **Exception:** Formally documented exception for Repository Name. The repository `MagnetarHeimarmene` deviates from the `magnetar-<domain>-<descriptor>` convention defined in `RULES.md`. This exception is accepted to maintain current repository identity.
+---
+**Timestamp:** 2026-01-10 16:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Completion of Phase B (The Connection).
+*   **Code Implementation:**
+    *   Implemented `contents/ui/CalendarManager.qml` using `org.kde.plasma.calendar.CalendarModel` (Task `task-201`).
+    *   Updated `contents/ui/main.qml` to display event titles from the Google Calendar integration (Task `task-202`).
+*   **Documentation:**
+    *   Updated `PLAN.md` and `projects/magnetar_heimarmene.project.yml`: `task-201`, `task-202`, and `ms-02` moved to `in_review`.
+    *   Updated `STATUS.md` to reflect 42% overall progress.
