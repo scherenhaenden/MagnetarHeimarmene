@@ -84,7 +84,7 @@ PlasmoidItem {
                     // Add a placeholder if empty
                     Text {
                         anchors.centerIn: parent
-                        text: eventList.count === 0 ? "No events found" : ""
+                        text: "No events found"
                         visible: eventList.count === 0
                         color: PlasmaCore.Theme.disabledTextColor
                     }
