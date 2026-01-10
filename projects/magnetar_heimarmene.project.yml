@@ -1,75 +1,86 @@
-metadata:
-  name: MagnetarHeimarmene
-  description: Unified Chronological & Atmospheric Awareness for Plasma 6
-  start_date: '2024-05-22'
-
-stakeholders:
-  - name: User
-    role: Product Owner
-  - name: Jules
-    role: Lead Engineer (AI)
-
+name: MagnetarHeimarmene
+description: "Unified Event Horizon: Chronology, Atmosphere, and Warnings."
+version: 0.1.0
 milestones:
   - id: ms-01
     name: "Phase A: The Skeleton"
-    target_date: TBD
+    target_date: "2024-05-22"
+    description: "Initialize project structure and basic QML rendering."
+    completion_criteria: "metadata.json created, main.qml loads with status indicator."
+    state: done
   - id: ms-02
     name: "Phase B: The Connection"
     target_date: TBD
+    description: "Implement Google Calendar integration via KDE Online Accounts."
+    completion_criteria: "Display a list of event titles from the configured Google account."
+    state: in_progress
   - id: ms-03
     name: "Phase C: The Atmosphere"
     target_date: TBD
+    description: "Connect to Weather DataEngine and overlay data."
+    completion_criteria: "Temperature integers displayed on the Event List."
+    state: planned
   - id: ms-04
     name: "Phase D: The Unification"
     target_date: TBD
+    description: "Apply Magnetar visual theme and unify logic."
+    completion_criteria: "Visual theme applied, \"Rain Umbrella\" logic implemented."
+    state: planned
 
 tasks:
   - id: task-101
-    milestone: ms-01
-    title: Initialize metadata.json
+    milestone_id: ms-01
+    title: "Initialize metadata.json"
     owner: Jules
+    effort: 1
     state: done
+    notes: "Plasma 6 specifications."
   - id: task-102
-    milestone: ms-01
-    title: Create main.qml skeleton
+    milestone_id: ms-01
+    title: "Create main.qml skeleton"
     owner: Jules
+    effort: 2
     state: done
+    notes: "Simple Red/Green status indicator."
   - id: task-201
-    milestone: ms-02
-    title: Implement CalendarModel
-    owner: Unassigned
-    state: planned
+    milestone_id: ms-02
+    title: "Implement CalendarModel"
+    owner: Jules
+    effort: 5
+    state: in_progress
+    notes: "Use org.kde.plasma.calendar."
   - id: task-202
-    milestone: ms-02
-    title: Display Event Titles
-    owner: Unassigned
-    state: planned
+    milestone_id: ms-02
+    title: "Display Event Titles"
+    owner: Jules
+    effort: 3
+    state: in_progress
+    notes: "List events from Google account."
   - id: task-301
-    milestone: ms-03
-    title: Connect Weather DataEngine
+    milestone_id: ms-03
+    title: "Connect Weather DataEngine"
     owner: Unassigned
+    effort: 3
     state: planned
+    notes: "org.kde.weather or Plasma 6 provider."
   - id: task-302
-    milestone: ms-03
-    title: Overlay Temperature
+    milestone_id: ms-03
+    title: "Overlay Temperature"
     owner: Unassigned
+    effort: 2
     state: planned
+    notes: ""
   - id: task-401
-    milestone: ms-04
-    title: Apply Magnetar Theme
+    milestone_id: ms-04
+    title: "Apply Magnetar Theme"
     owner: Unassigned
+    effort: 5
     state: planned
+    notes: "Translucency, Blur, Circular motifs."
   - id: task-402
-    milestone: ms-04
-    title: Implement Event-Weather Logic
+    milestone_id: ms-04
+    title: "Implement Event-Weather Logic"
     owner: Unassigned
+    effort: 5
     state: planned
-
-risks:
-  - description: Akonadi/PIM integration complexity in Plasma 6
-    mitigation: Use standard org.kde.plasma.PimCalendars DataSource
-  - description: Google Auth changes
-    mitigation: Rely on kaccounts-integration
-
-reporting:
-  auto_update: true
+    notes: "Event time == Rain time -> Umbrella Icon."
