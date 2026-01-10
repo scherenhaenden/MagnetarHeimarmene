@@ -2,6 +2,7 @@
 .*
 !.gitignore
 !.git
+!.github/
 
 # Build artifacts
 *.o
