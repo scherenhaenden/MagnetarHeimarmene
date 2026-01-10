@@ -9,8 +9,8 @@ PlasmoidItem {
 
     // The main view when the widget is expanded
     fullRepresentation: Item {
-        width: 300
-        height: 400
+        width: root.availableWidth
+        height: root.availableHeight
 
         Rectangle {
             anchors.fill: parent
