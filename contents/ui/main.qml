@@ -83,7 +83,6 @@ PlasmoidItem {
                                         width: 4
                                         height: parent.height
                                         color: modelData.color ? modelData.color : PlasmaCore.Theme.highlightColor
-                                        visible: !!modelData.color
                                     }
 
                                     ColumnLayout {
@@ -143,7 +142,7 @@ PlasmoidItem {
         }
 
         PlasmaComponents.ToolTip {
-            text: Qt.formatDate(new Date(), "ddd d")
+            text: Qt.formatDate(calendarManager.currentDate, "ddd d")
             visible: compactRoot.containsMouse
         }
     }
