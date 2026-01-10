@@ -58,22 +58,15 @@ PlasmoidItem {
     compactRepresentation: MouseArea {
         id: compactRoot
 
-        property bool active: false
-
         onClicked: {
-            root.expanded = !root.expanded
+            plasmoid.expanded = !plasmoid.expanded
         }
 
-        Rectangle {
-            anchors.fill: parent
-            color: "transparent"
-
-            Text {
-                anchors.centerIn: parent
-                text: "MH"
-                color: "white"
-                font.bold: true
-            }
+        Text {
+            anchors.centerIn: parent
+            text: "MH"
+            color: PlasmaCore.Theme.textColor
+            font.bold: true
         }
     }
 }
