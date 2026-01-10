@@ -24,5 +24,5 @@
 **Author:** Jules (AI Agent)
 **Entry:** Documentation Synchronization and Release Pipeline Setup.
 *   **Sync:** Updated `projects/magnetar_heimarmene.project.yml`, `PLAN.md`, and `STATUS.md` to correctly reflect the completion of Phase A (`ms-01`) and tasks `task-101`, `task-102`.
-*   **Pipeline:** Established release pipeline for generating `.plasmoid` packages.
+*   **Pipeline:** Established local release pipeline (`build_release.sh`) and GitHub Actions workflow (`.github/workflows/release.yml`) for automated packaging.
 ---
