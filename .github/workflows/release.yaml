@@ -22,7 +22,16 @@ jobs:
           install-deps: 'true'
 
       - name: Build Release
-        run: ./build_release.sh
+        id: build_release
+        run: |
+          ./build_release.sh
+          # Extract version again for the workflow steps
+          if command -v jq &> /dev/null; then
+              VERSION=$(jq -r '.KPlugin.Version' metadata.json)
+          else
+              VERSION=$(python3 -c "import json; print(json.load(open('metadata.json'))['KPlugin']['Version'])")
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
