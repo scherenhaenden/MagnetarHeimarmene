@@ -29,13 +29,13 @@ Item {
     }
 
     function nextMonth() {
-        var d = root.currentDate;
+        var d = new Date(root.currentDate);
         d.setMonth(d.getMonth() + 1);
         root.currentDate = d;
     }
 
     function prevMonth() {
-        var d = root.currentDate;
+        var d = new Date(root.currentDate);
         d.setMonth(d.getMonth() - 1);
         root.currentDate = d;
     }
