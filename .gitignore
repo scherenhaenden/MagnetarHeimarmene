@@ -1,1 +1,21 @@
+# Hidden files
+.*
+!.gitignore
+!.git
+
+# Build artifacts
+*.o
+*.so
+*.a
+*.exe
+*.plasmoid
+releases/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Editor specifics
+.vscode/
 .idea/
+*.swp
