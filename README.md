@@ -1,6 +1,6 @@
 # Magnetar Heimarmene
 
-![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.1.0-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green)
+![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.1.0-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green) ![Build Status](https://github.com/scherenhaenden/MagnetarHeimarmene/actions/workflows/release.yml/badge.svg)
 
 > **"Unified Event Horizon: Chronology, Atmosphere, and Warnings"**
 
@@ -32,7 +32,13 @@ Magnetar Heimarmene unifies:
 
 ### Installation
 
-*Coming soon! As we move from Pre-Alpha to a release candidate, simple installation instructions will be provided here.*
+1.  Go to the [Releases](https://github.com/scherenhaenden/MagnetarHeimarmene/releases) page.
+2.  Download the latest .plasmoid file (e.g., MagnetarHeimarmene-vX.Y.Z.plasmoid).
+3.  Install it using the command line:
+    ```bash
+    kpackagetool6 --install MagnetarHeimarmene-vX.Y.Z.plasmoid
+    ```
+    *Or use the "Install from File..." option in Plasma Widget Explorer.*
 
 ### Development Setup
 
