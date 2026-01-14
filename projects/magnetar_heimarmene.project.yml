@@ -68,14 +68,14 @@ tasks:
     title: "Connect Weather DataEngine"
     owner: Unassigned
     effort: 3
-    state: planned
+    state: ready
     notes: "org.kde.weather or Plasma 6 provider."
   - id: task-302
     milestone_id: ms-03
     title: "Overlay Temperature"
     owner: Unassigned
     effort: 2
-    state: planned
+    state: ready
     notes: ""
   - id: task-401
     milestone_id: ms-04
