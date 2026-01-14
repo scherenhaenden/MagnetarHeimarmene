@@ -19,6 +19,7 @@
 | `task-102` | `ms-01` | Create `main.qml` skeleton | Jules | 2 | `done` | Simple Red/Green status indicator. |
 | `task-201` | `ms-02` | Implement `CalendarModel` | Jules | 5 | `in_review` | Use `org.kde.plasma.calendar`. |
 | `task-202` | `ms-02` | Display Event Titles | Jules | 3 | `in_review` | List events from Google account. |
+| `task-901` | `ms-02` | Modernize JS and Verify | Jules | 3 | `done` | Refactor to const/let, strict comments, verify markdowns. |
 | `task-301` | `ms-03` | Connect Weather DataEngine | Unassigned | 3 | `planned` | `org.kde.weather` or Plasma 6 provider. |
 | `task-302` | `ms-03` | Overlay Temperature | Unassigned | 2 | `planned` | |
 | `task-401` | `ms-04` | Apply Magnetar Theme | Unassigned | 5 | `planned` | Translucency, Blur, Circular motifs. |
@@ -26,8 +27,8 @@
 
 ## 3. Effort Summary
 
-*   **Total effort:** 26 pts
-*   **Completed:** 3 pts
+*   **Total effort:** 29 pts
+*   **Completed:** 6 pts
 *   **In progress:** 0 pts
 *   **In review:** 8 pts
 *   **Remaining:** 15 pts
