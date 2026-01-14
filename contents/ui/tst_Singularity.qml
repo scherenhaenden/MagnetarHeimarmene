@@ -1,5 +1,5 @@
-import QtQuick
-import QtTest
+import QtQuick 2.15
+import QtTest 1.0
 import "HeimarmeneEngine.js" as HeimarmeneEngine
 import "AtmosphereEngine.js" as AtmosphereEngine
 
@@ -118,5 +118,13 @@ TestCase {
         // Atomic test: Invalid input
         var invalidResult = AtmosphereEngine.normalizeWeatherData(null);
         compare(invalidResult, null, "Should return null for null input");
+
+        // Atomic test: Data with malformed condition object
+        var malformedConditionData = {
+            temp_c: 10,
+            condition: { some_other_prop: "value" }
+        };
+        var malformedResult = AtmosphereEngine.normalizeWeatherData(malformedConditionData);
+        compare(malformedResult.condition, "Unknown", "Should handle malformed condition object and default to Unknown");
     }
 }

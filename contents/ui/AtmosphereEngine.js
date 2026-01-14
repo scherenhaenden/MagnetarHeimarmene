@@ -47,9 +47,9 @@ function normalizeWeatherData(rawData) {
     }
 
     // Condition
-    if (rawData.hasOwnProperty('condition') && rawData.condition.text) {
+    if (rawData.hasOwnProperty('condition') && rawData.condition && typeof rawData.condition.text === 'string') {
         normalized.condition = rawData.condition.text;
-    } else if (rawData.hasOwnProperty('condition')) {
+    } else if (rawData.hasOwnProperty('condition') && typeof rawData.condition === 'string') {
         normalized.condition = rawData.condition;
     } else {
         normalized.condition = "Unknown";
