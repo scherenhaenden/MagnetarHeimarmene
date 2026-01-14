@@ -37,3 +37,22 @@
 **Entry:** Documentation Verification and Rule Exception.
 *   **Verification:** Verified integrity and consistency of all Markdown documentation (`PLAN.md`, `STATUS.md`, `RULES.md`, etc.).
 *   **Exception:** Formally documented exception for Repository Name. The repository `MagnetarHeimarmene` deviates from the `magnetar-<domain>-<descriptor>` convention defined in `RULES.md`. This exception is accepted to maintain current repository identity.
+---
+**Timestamp:** 2026-01-10 16:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Completion of Phase B (The Connection).
+*   **Code Implementation:**
+    *   Implemented `contents/ui/CalendarManager.qml` using `org.kde.plasma.calendar.CalendarModel` (Task `task-201`).
+    *   Updated `contents/ui/main.qml` to display event titles from the Google Calendar integration (Task `task-202`).
+*   **Documentation:**
+    *   Updated `PLAN.md` and `projects/magnetar_heimarmene.project.yml`: `task-201`, `task-202`, and `ms-02` moved to `in_review`.
+    *   Updated `STATUS.md` to reflect 42% overall progress.
+---
+**Timestamp:** 2026-01-11 09:00 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Modernization and Verification.
+*   **Code Modernization:** Replaced legacy `var` usage with `const`/`let` in `HeimarmeneEngine.js`, `AtmosphereEngine.js`, and unit tests (Task `task-901`).
+*   **Documentation:**
+    *   Added `task-901` to `PLAN.md` and `projects/magnetar_heimarmene.project.yml` and marked as `done`.
+    *   Verified markdown consistency.
+    *   Updated `STATUS.md` to 48% progress.

@@ -20,15 +20,16 @@ Item {
         date: root.currentDate
     }
 
-    function nextMonth() {
+    // Helper functions for navigation (can be connected to buttons in main.qml later)
+    function nextDay() {
         var d = new Date(root.currentDate);
-        d.setMonth(d.getMonth() + 1);
+        d.setDate(d.getDate() + 1);
         root.currentDate = d;
     }
 
-    function prevMonth() {
+    function prevDay() {
         var d = new Date(root.currentDate);
-        d.setMonth(d.getMonth() - 1);
+        d.setDate(d.getDate() - 1);
         root.currentDate = d;
     }
 }

@@ -10,6 +10,11 @@ PlasmoidItem {
     // Set the preferred size for the widget
     preferredRepresentation: fullRepresentation
 
+    // Calendar Manager (Data Source)
+    CalendarManager {
+        id: calendarManager
+    }
+
     // The main view when the widget is expanded
     fullRepresentation: PlasmaComponents.Panel {
         // Use gridUnit for resolution independence instead of fixed pixels
@@ -28,68 +33,95 @@ PlasmoidItem {
                 Layout.alignment: Qt.AlignHCenter
             }
 
-            // Calendar Manager (Data Source)
-            CalendarManager {
-                id: calendarManager
-            }
-
-            // Status Indicator (Task 102) - Kept for reference but smaller
-            RowLayout {
+            // Header for the date
+            Text {
+                text: Qt.formatDate(calendarManager.currentDate, "dddd, MMMM d, yyyy")
+                color: PlasmaCore.Theme.highlightColor
+                font.bold: true
                 Layout.alignment: Qt.AlignHCenter
-                spacing: PlasmaCore.Units.smallSpacing
-
-                Rectangle {
-                    implicitWidth: PlasmaCore.Units.gridUnit * 0.5
-                    implicitHeight: PlasmaCore.Units.gridUnit * 0.5
-                    radius: width / 2
-                    color: PlasmaCore.Theme.positiveBackgroundColor
-                }
-                Text {
-                    text: "System Nominal"
-                    color: PlasmaCore.Theme.complementaryTextColor
-                    font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 0.8
-                }
             }
 
             PlasmaComponents.ScrollView {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                // Placeholder for the list of events
+                // We want to display the events for the selected date.
+                // The CalendarModel provides days for the month.
+                // We will iterate over the days and only show the one matching currentDate.
                 ListView {
                     id: eventList
                     model: calendarManager.model
                     clip: true
 
                     delegate: Item {
+                        // Check if this item corresponds to the selected date
+                        // CalendarModel typically provides 'day', 'month', 'year' roles
+                        // We also check if 'events' are present.
+                        readonly property bool isSelectedDay: {
+                            if (!calendarManager.currentDate) return false
+                            return model.day === calendarManager.currentDate.getDate() &&
+                                   model.month === calendarManager.currentDate.getMonth() &&
+                                   model.year === calendarManager.currentDate.getFullYear()
+                        }
+
+                        visible: isSelectedDay
+                        height: visible ? contentCol.height : 0
                         width: ListView.view.width
-                        height: PlasmaCore.Units.gridUnit * 2
 
                         ColumnLayout {
-                            anchors.fill: parent
-                            anchors.margins: PlasmaCore.Units.smallSpacing
+                            id: contentCol
+                            width: parent.width
+                            spacing: PlasmaCore.Units.smallSpacing
 
-                            // Note: We need to verify the roles provided by CalendarModel.
-                            // Common roles: display, event, startDate, endDate, etc.
-                            // Assuming 'display' or similar for now.
-                            // Since we can't see the output, we will try to display generic info if model is empty.
+                            // Iterate over the events for this day
+                            // model.events is expected to be a list/array of event objects
+                            Repeater {
+                                model: model.events
+                                delegate: RowLayout {
+                                    Layout.fillWidth: true
 
+                                    Rectangle {
+                                        width: 4
+                                        height: parent.height
+                                        color: modelData.color ? modelData.color : PlasmaCore.Theme.highlightColor
+                                    }
+
+                                    ColumnLayout {
+                                        Layout.fillWidth: true
+                                        Text {
+                                            text: modelData.title
+                                            color: PlasmaCore.Theme.textColor
+                                            font.bold: true
+                                        }
+                                        Text {
+                                            text: modelData.description || ""
+                                            color: PlasmaCore.Theme.disabledTextColor
+                                            visible: text.length > 0
+                                            font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 0.9
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Fallback if no events for this day
                             Text {
-                                text: (typeof display !== "undefined" && display) ? display : "Event"
-                                color: PlasmaCore.Theme.textColor
+                                text: (!model.events || model.events.length === 0) ? "No events for this day" : ""
+                                visible: text.length > 0
+                                color: PlasmaCore.Theme.disabledTextColor
+                                Layout.alignment: Qt.AlignHCenter
                             }
                         }
                     }
 
-                    // Add a placeholder if empty
-                    Text {
-                        anchors.centerIn: parent
-                        text: "No events found"
-                        visible: eventList.count === 0
-                        color: PlasmaCore.Theme.disabledTextColor
-                        z: 1 // Ensure it's on top if needed, though usually fine
-                    }
                 }
+            }
+
+            // Placeholder when list is empty
+            Text {
+                text: "No events found"
+                visible: eventList.count === 0
+                color: PlasmaCore.Theme.disabledTextColor
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }
@@ -97,6 +129,7 @@ PlasmoidItem {
     // The icon view when the widget is on the panel (compact)
     compactRepresentation: MouseArea {
         id: compactRoot
+        hoverEnabled: true
 
         onClicked: {
             plasmoid.expanded = !plasmoid.expanded
@@ -107,6 +140,11 @@ PlasmoidItem {
             text: "MH"
             color: PlasmaCore.Theme.textColor
             font.bold: true
+        }
+
+        PlasmaComponents.ToolTip {
+            text: Qt.formatDate(calendarManager.currentDate, "ddd d")
+            visible: compactRoot.containsMouse
         }
     }
 }
