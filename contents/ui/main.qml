@@ -10,6 +10,11 @@ PlasmoidItem {
     // Set the preferred size for the widget
     preferredRepresentation: fullRepresentation
 
+    // Calendar Manager (Data Source)
+    CalendarManager {
+        id: calendarManager
+    }
+
     // The main view when the widget is expanded
     fullRepresentation: PlasmaComponents.Panel {
         // Use gridUnit for resolution independence instead of fixed pixels
@@ -26,11 +31,6 @@ PlasmoidItem {
                 font.bold: true
                 font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 1.5
                 Layout.alignment: Qt.AlignHCenter
-            }
-
-            // Calendar Manager (Data Source)
-            CalendarManager {
-                id: calendarManager
             }
 
             // Header for the date
@@ -58,8 +58,9 @@ PlasmoidItem {
                         // CalendarModel typically provides 'day', 'month', 'year' roles
                         // We also check if 'events' are present.
                         readonly property bool isSelectedDay: {
+                            if (!calendarManager.currentDate) return false
                             return model.day === calendarManager.currentDate.getDate() &&
-                                   model.month === calendarManager.currentDate.getMonth() + 1 &&
+                                   model.month === calendarManager.currentDate.getMonth() &&
                                    model.year === calendarManager.currentDate.getFullYear()
                         }
 
@@ -112,15 +113,15 @@ PlasmoidItem {
                         }
                     }
 
-                    // Add a placeholder if empty
-                    // Using overlay property from Flickable
-                    overlay: Text {
-                        anchors.centerIn: parent
-                        text: "No events found"
-                        visible: eventList.count === 0
-                        color: PlasmaCore.Theme.disabledTextColor
-                    }
                 }
+            }
+
+            // Placeholder when list is empty
+            Text {
+                text: "No events found"
+                visible: eventList.count === 0
+                color: PlasmaCore.Theme.disabledTextColor
+                Layout.alignment: Qt.AlignHCenter
             }
         }
     }
