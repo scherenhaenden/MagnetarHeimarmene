@@ -1,12 +1,12 @@
 # Status of MagnetarHeimarmene
 
 ## Progress Summary
-**Overall Progress:** 42%
-[████░░░░░░]
+**Overall Progress:** 48%
+[█████░░░░░]
 
 ## Current Milestones
 *   `ms-01` **Phase A: The Skeleton**: `done`
-*   `ms-02` **Phase B: The Connection**: `in_review`
+*   `ms-02` **Phase B: The Connection**: `in_review` (Modernization/Verification complete)
 *   `ms-03` **Phase C: The Atmosphere**: `planned`
 *   `ms-04` **Phase D: The Unification**: `planned`
 

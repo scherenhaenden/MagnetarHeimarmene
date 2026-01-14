@@ -5,6 +5,8 @@
  *
  * This module handles the weather data processing logic.
  * It normalizes data from different providers into a standard format.
+ *
+ * @module AtmosphereEngine
  */
 
 /**
@@ -34,7 +36,7 @@ function normalizeWeatherData(rawData) {
     // We check for minimal required fields. This logic would be more complex in production.
     // Here we try to adapt standard keys found in many APIs (like WeatherAPI, OpenWeatherMap simplified).
 
-    var normalized = {};
+    const normalized = {};
 
     // Temperature
     if (rawData.hasOwnProperty('temp_c')) {

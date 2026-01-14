@@ -56,6 +56,13 @@ tasks:
     effort: 3
     state: in_review
     notes: "List events from Google account."
+  - id: task-901
+    milestone_id: ms-02
+    title: "Modernize JS and Verify"
+    owner: Jules
+    effort: 3
+    state: done
+    notes: "Refactor to const/let, strict comments, verify markdowns."
   - id: task-301
     milestone_id: ms-03
     title: "Connect Weather DataEngine"

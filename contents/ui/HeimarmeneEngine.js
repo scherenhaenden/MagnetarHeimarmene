@@ -5,6 +5,8 @@
  *
  * This module handles the core chronological logic for the Magnetar Heimarmene project.
  * It strictly separates logic from the view (Event Horizon).
+ *
+ * @module HeimarmeneEngine
  */
 
 /**
@@ -20,7 +22,7 @@ function parseDate(dateString) {
         return null;
     }
 
-    var date = new Date(dateString);
+    const date = new Date(dateString);
     if (isNaN(date.getTime())) {
         console.warn("HeimarmeneEngine: parseDate: Invalid date string:", dateString);
         return null;
@@ -41,16 +43,16 @@ function detectConflicts(events) {
         return [];
     }
 
-    var conflicts = [];
+    const conflicts = [];
 
     // Sort events by start time to simplify comparison
     // We create a shallow copy to avoid mutating the original array
-    var sortedEvents = events.slice().sort(function(a, b) {
+    const sortedEvents = events.slice().sort(function(a, b) {
         return a.start - b.start;
     });
 
-    for (var i = 0; i < sortedEvents.length; i++) {
-        var eventA = sortedEvents[i];
+    for (let i = 0; i < sortedEvents.length; i++) {
+        const eventA = sortedEvents[i];
 
         // Ensure event has valid start/end
         if (!eventA.start || !eventA.end) {
@@ -58,8 +60,8 @@ function detectConflicts(events) {
              continue;
         }
 
-        for (var j = i + 1; j < sortedEvents.length; j++) {
-            var eventB = sortedEvents[j];
+        for (let j = i + 1; j < sortedEvents.length; j++) {
+            const eventB = sortedEvents[j];
 
             if (!eventB.start || !eventB.end) {
                  continue;
