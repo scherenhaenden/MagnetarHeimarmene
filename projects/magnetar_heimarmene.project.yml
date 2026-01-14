@@ -10,10 +10,10 @@ milestones:
     state: done
   - id: ms-02
     name: "Phase B: The Connection"
-    target_date: TBD
+    target_date: "2026-01-10"
     description: "Implement Google Calendar integration via KDE Online Accounts."
     completion_criteria: "Display a list of event titles from the configured Google account."
-    state: in_review
+    state: done
   - id: ms-03
     name: "Phase C: The Atmosphere"
     target_date: TBD
@@ -47,14 +47,14 @@ tasks:
     title: "Implement CalendarModel"
     owner: Jules
     effort: 5
-    state: in_review
+    state: done
     notes: "Use org.kde.plasma.calendar."
   - id: task-202
     milestone_id: ms-02
     title: "Display Event Titles"
     owner: Jules
     effort: 3
-    state: in_review
+    state: done
     notes: "List events from Google account."
   - id: task-901
     milestone_id: ms-02
