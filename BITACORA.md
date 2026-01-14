@@ -56,3 +56,11 @@
     *   Added `task-901` to `PLAN.md` and `projects/magnetar_heimarmene.project.yml` and marked as `done`.
     *   Verified markdown consistency.
     *   Updated `STATUS.md` to 48% progress.
+---
+**Timestamp:** 2026-01-11 10:00 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Version Correction and Milestone Synchronization.
+*   **Analysis:** Conducted review of current codebase against version `0.3.0`. Determined that while Phase B (Calendar) is complete, Phase C (Atmosphere) is not yet started, making `0.3.0` premature.
+*   **Correction:** Downgraded version in `metadata.json` and `projects/magnetar_heimarmene.project.yml` to `0.2.0` to correctly signify "Phase B Complete".
+*   **Milestone Update:** Marked `ms-02` (Phase B) and associated tasks (`task-201`, `task-202`) as `done` in `PLAN.md` and `project.yml`.
+*   **Status Update:** Updated `STATUS.md` to reflect `ms-02` completion.
