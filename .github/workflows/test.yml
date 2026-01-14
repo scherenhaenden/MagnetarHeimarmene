@@ -31,9 +31,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb
 
+      - name: Debug Environment
+        run: |
+          which qml
+          ls -l $(dirname $(which qml))
+
       - name: Run QML Tests
-        # Using qml executable provided by Qt installation.
-        # -test runs the TestCase elements found in the file.
+        # Using qmltestrunner provided by Qt installation.
+        # -input runs the specific test file.
         # xvfb-run is required because QML tests need a display server.
         run: |
-          xvfb-run -a qml -test contents/ui/tst_Singularity.qml
+          xvfb-run -a qmltestrunner -input contents/ui/tst_Singularity.qml
