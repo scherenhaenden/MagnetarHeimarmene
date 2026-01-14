@@ -7,7 +7,7 @@
 ## Current Milestones
 *   `ms-01` **Phase A: The Skeleton**: `done`
 *   `ms-02` **Phase B: The Connection**: `done`
-*   `ms-03` **Phase C: The Atmosphere**: `planned`
+*   `ms-03` **Phase C: The Atmosphere**: `planned` (Tasks Ready)
 *   `ms-04` **Phase D: The Unification**: `planned`
 
 ## Risks and Mitigations

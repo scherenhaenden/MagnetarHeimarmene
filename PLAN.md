@@ -20,8 +20,8 @@
 | `task-201` | `ms-02` | Implement `CalendarModel` | Jules | 5 | `done` | Use `org.kde.plasma.calendar`. |
 | `task-202` | `ms-02` | Display Event Titles | Jules | 3 | `done` | List events from Google account. |
 | `task-901` | `ms-02` | Modernize JS and Verify | Jules | 3 | `done` | Refactor to const/let, strict comments, verify markdowns. |
-| `task-301` | `ms-03` | Connect Weather DataEngine | Unassigned | 3 | `planned` | `org.kde.weather` or Plasma 6 provider. |
-| `task-302` | `ms-03` | Overlay Temperature | Unassigned | 2 | `planned` | |
+| `task-301` | `ms-03` | Connect Weather DataEngine | Unassigned | 3 | `ready` | `org.kde.weather` or Plasma 6 provider. |
+| `task-302` | `ms-03` | Overlay Temperature | Unassigned | 2 | `ready` | |
 | `task-401` | `ms-04` | Apply Magnetar Theme | Unassigned | 5 | `planned` | Translucency, Blur, Circular motifs. |
 | `task-402` | `ms-04` | Implement Event-Weather Logic | Unassigned | 5 | `planned` | Event time == Rain time -> Umbrella Icon. |
 
