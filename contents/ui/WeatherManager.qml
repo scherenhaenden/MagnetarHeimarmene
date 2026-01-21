@@ -51,6 +51,8 @@ Item {
         if (root.sourceId) {
             weatherSource.disconnectSource(root.sourceId)
         }
+        root.hasWeather = false
+        root.weatherData = ({})
         root.sourceId = newSource
         if (root.sourceId) {
             weatherSource.connectSource(root.sourceId)
