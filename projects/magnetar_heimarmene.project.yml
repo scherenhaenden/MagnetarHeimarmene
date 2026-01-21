@@ -1,6 +1,6 @@
 name: MagnetarHeimarmene
 description: "Unified Event Horizon: Chronology, Atmosphere, and Warnings."
-version: 0.2.0
+version: 0.3.1
 milestones:
   - id: ms-01
     name: "Phase A: The Skeleton"
@@ -10,16 +10,16 @@ milestones:
     state: done
   - id: ms-02
     name: "Phase B: The Connection"
-    target_date: TBD
+    target_date: "2026-01-10"
     description: "Implement Google Calendar integration via KDE Online Accounts."
     completion_criteria: "Display a list of event titles from the configured Google account."
-    state: in_review
+    state: done
   - id: ms-03
     name: "Phase C: The Atmosphere"
     target_date: TBD
     description: "Connect to Weather DataEngine and overlay data."
     completion_criteria: "Temperature integers displayed on the Event List."
-    state: planned
+    state: in_progress
   - id: ms-04
     name: "Phase D: The Unification"
     target_date: TBD
@@ -47,14 +47,14 @@ tasks:
     title: "Implement CalendarModel"
     owner: Jules
     effort: 5
-    state: in_review
+    state: done
     notes: "Use org.kde.plasma.calendar."
   - id: task-202
     milestone_id: ms-02
     title: "Display Event Titles"
     owner: Jules
     effort: 3
-    state: in_review
+    state: done
     notes: "List events from Google account."
   - id: task-901
     milestone_id: ms-02
@@ -66,9 +66,9 @@ tasks:
   - id: task-301
     milestone_id: ms-03
     title: "Connect Weather DataEngine"
-    owner: Unassigned
+    owner: Jules
     effort: 3
-    state: planned
+    state: in_review
     notes: "org.kde.weather or Plasma 6 provider."
   - id: task-302
     milestone_id: ms-03
