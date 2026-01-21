@@ -34,6 +34,19 @@ Item {
         }
     }
 
+    function temperatureDisplay() {
+        const data = root.weatherData || {}
+        const value = data["Temperature"] ?? data["temperature"] ?? data["temp"] ?? data["temp_c"] ?? data["temp_f"]
+        if (value === undefined || value === null || value === "") {
+            return "--"
+        }
+        const unit = data["TemperatureUnit"] ?? data["temperatureUnit"] ?? data["Unit"] ?? data["unit"] ?? data["temp_unit"]
+        if (unit) {
+            return value + " " + unit
+        }
+        return value.toString()
+    }
+
     function setSource(newSource) {
         if (root.sourceId) {
             weatherSource.disconnectSource(root.sourceId)

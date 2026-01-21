@@ -73,3 +73,9 @@
 *   **Planning:** Moved `task-301` to `in_review`, set `ms-03` to `in_progress`, and updated effort totals.
 *   **Version Update:** Bumped version to `0.3.0` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
 *   **Status Update:** Updated `STATUS.md` progress to 58%.
+---
+**Timestamp:** 2026-01-21 08:53 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Weather display unit alignment.
+*   **UI Adjustment:** Updated weather summary rendering to derive temperature units from the DataEngine payload instead of hardcoding Celsius.
+*   **Version Update:** Bumped version to `0.3.1` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.

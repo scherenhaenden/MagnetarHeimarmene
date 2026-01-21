@@ -49,7 +49,7 @@ PlasmoidItem {
             // Weather summary for the current location
             Text {
                 text: weatherManager.hasWeather
-                    ? ("Weather: " + (weatherManager.weatherData['Temperature'] || "--") + "°C")
+                    ? ("Weather: " + weatherManager.temperatureDisplay())
                     : "Weather: --"
                 color: PlasmaCore.Theme.textColor
                 Layout.alignment: Qt.AlignHCenter
