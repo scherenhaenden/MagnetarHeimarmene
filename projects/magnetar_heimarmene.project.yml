@@ -1,5 +1,12 @@
-name: MagnetarHeimarmene
-description: "Unified Event Horizon: Chronology, Atmosphere, and Warnings."
+metadata:
+  name: MagnetarHeimarmene
+  description: "Unified Event Horizon: Chronology, Atmosphere, and Warnings."
+  start_date: "2024-05-22"
+stakeholders:
+  - name: User
+    role: Product Owner
+  - name: Jules
+    role: Lead Engineer (AI)
 version: 0.3.1
 milestones:
   - id: ms-01

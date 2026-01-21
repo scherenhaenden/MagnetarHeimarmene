@@ -79,3 +79,9 @@
 **Entry:** Weather display unit alignment.
 *   **UI Adjustment:** Updated weather summary rendering to derive temperature units from the DataEngine payload instead of hardcoding Celsius.
 *   **Version Update:** Bumped version to `0.3.1` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+---
+**Timestamp:** 2026-01-21 14:33 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Project YAML compatibility restoration and test workflow blocker.
+*   **Project YAML:** Restored `metadata` and `stakeholders` sections in `projects/magnetar_heimarmene.project.yml` for canonical compatibility.
+*   **Blocker:** Logged `blocker-test-debug-qmltestrunner` noting `test.yml` debug step checks `qml` while tests run `qmltestrunner`. Kept `test-v2.yml` pending validation of `qmltestrunner` availability.
