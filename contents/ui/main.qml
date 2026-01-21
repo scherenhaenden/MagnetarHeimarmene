@@ -15,6 +15,11 @@ PlasmoidItem {
         id: calendarManager
     }
 
+    // Weather Manager (Data Source)
+    WeatherManager {
+        id: weatherManager
+    }
+
     // The main view when the widget is expanded
     fullRepresentation: PlasmaComponents.Panel {
         // Use gridUnit for resolution independence instead of fixed pixels
@@ -38,6 +43,15 @@ PlasmoidItem {
                 text: Qt.formatDate(calendarManager.currentDate, "dddd, MMMM d, yyyy")
                 color: PlasmaCore.Theme.highlightColor
                 font.bold: true
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            // Weather summary for the current location
+            Text {
+                text: weatherManager.hasWeather
+                    ? ("Weather: " + weatherManager.temperatureDisplay())
+                    : "Weather: --"
+                color: PlasmaCore.Theme.textColor
                 Layout.alignment: Qt.AlignHCenter
             }
 
