@@ -1,5 +1,5 @@
 import QtQuick
-import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasma5support as Plasma5Support
 
 Item {
     id: root
@@ -8,7 +8,7 @@ Item {
     property var weatherData: ({})
     property bool hasWeather: false
 
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: weatherSource
         engine: "weather"
 

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasmoid
-import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 
 PlasmoidItem {
@@ -23,25 +23,25 @@ PlasmoidItem {
     // The main view when the widget is expanded
     fullRepresentation: PlasmaComponents.Panel {
         // Use gridUnit for resolution independence instead of fixed pixels
-        implicitWidth: PlasmaCore.Units.gridUnit * 20
-        implicitHeight: PlasmaCore.Units.gridUnit * 30
+        implicitWidth: Kirigami.Units.gridUnit * 20
+        implicitHeight: Kirigami.Units.gridUnit * 30
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: PlasmaCore.Units.smallSpacing
+            anchors.margins: Kirigami.Units.smallSpacing
 
             Text {
                 text: "Magnetar Heimarmene"
-                color: PlasmaCore.Theme.textColor
+                color: Kirigami.Theme.textColor
                 font.bold: true
-                font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 1.5
+                font.pixelSize: Kirigami.Theme.defaultFont.pixelSize * 1.5
                 Layout.alignment: Qt.AlignHCenter
             }
 
             // Header for the date
             Text {
                 text: Qt.formatDate(calendarManager.currentDate, "dddd, MMMM d, yyyy")
-                color: PlasmaCore.Theme.highlightColor
+                color: Kirigami.Theme.highlightColor
                 font.bold: true
                 Layout.alignment: Qt.AlignHCenter
             }
@@ -51,7 +51,7 @@ PlasmoidItem {
                 text: weatherManager.hasWeather
                     ? ("Weather: " + weatherManager.temperatureDisplay())
                     : "Weather: --"
-                color: PlasmaCore.Theme.textColor
+                color: Kirigami.Theme.textColor
                 Layout.alignment: Qt.AlignHCenter
             }
 
@@ -85,7 +85,7 @@ PlasmoidItem {
                         ColumnLayout {
                             id: contentCol
                             width: parent.width
-                            spacing: PlasmaCore.Units.smallSpacing
+                            spacing: Kirigami.Units.smallSpacing
 
                             // Iterate over the events for this day
                             // model.events is expected to be a list/array of event objects
@@ -97,21 +97,21 @@ PlasmoidItem {
                                     Rectangle {
                                         width: 4
                                         height: parent.height
-                                        color: modelData.color ? modelData.color : PlasmaCore.Theme.highlightColor
+                                        color: modelData.color ? modelData.color : Kirigami.Theme.highlightColor
                                     }
 
                                     ColumnLayout {
                                         Layout.fillWidth: true
                                         Text {
                                             text: modelData.title
-                                            color: PlasmaCore.Theme.textColor
+                                            color: Kirigami.Theme.textColor
                                             font.bold: true
                                         }
                                         Text {
                                             text: modelData.description || ""
-                                            color: PlasmaCore.Theme.disabledTextColor
+                                            color: Kirigami.Theme.disabledTextColor
                                             visible: text.length > 0
-                                            font.pixelSize: PlasmaCore.Theme.defaultFont.pixelSize * 0.9
+                                            font.pixelSize: Kirigami.Theme.defaultFont.pixelSize * 0.9
                                         }
                                     }
                                 }
@@ -121,7 +121,7 @@ PlasmoidItem {
                             Text {
                                 text: (!model.events || model.events.length === 0) ? "No events for this day" : ""
                                 visible: text.length > 0
-                                color: PlasmaCore.Theme.disabledTextColor
+                                color: Kirigami.Theme.disabledTextColor
                                 Layout.alignment: Qt.AlignHCenter
                             }
                         }
@@ -134,7 +134,7 @@ PlasmoidItem {
             Text {
                 text: "No events found"
                 visible: eventList.count === 0
-                color: PlasmaCore.Theme.disabledTextColor
+                color: Kirigami.Theme.disabledTextColor
                 Layout.alignment: Qt.AlignHCenter
             }
         }
@@ -152,7 +152,7 @@ PlasmoidItem {
         Text {
             anchors.centerIn: parent
             text: "MH"
-            color: PlasmaCore.Theme.textColor
+            color: Kirigami.Theme.textColor
             font.bold: true
         }
 
