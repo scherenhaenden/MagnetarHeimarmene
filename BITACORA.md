@@ -111,3 +111,9 @@
 **Entry:** QML test cleanup hardening.
 *   **Tests:** Updated `tst_MainView.qml` to use `try/finally` for guaranteed cleanup after instantiation.
 *   **Version Update:** Bumped version to `0.3.4` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+---
+**Timestamp:** 2026-01-22 10:20 UTC
+**Author:** Jules (AI Agent)
+**Entry:** QML load test error handling.
+*   **Tests:** Added error handling and warnings to `tst_MainView.qml` for component load failures and null instantiation.
+*   **Version Update:** Bumped version to `0.3.5` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.

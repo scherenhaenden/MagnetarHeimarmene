@@ -1,6 +1,8 @@
 # Magnetar Heimarmene
 
-![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.3.4-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green) ![Build Status](https://github.com/scherenhaenden/MagnetarHeimarmene/actions/workflows/release.yaml/badge.svg)
+![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.3.5-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green) ![Build Status](https://github.com/scherenhaenden/MagnetarHeimarmene/actions/workflows/release.yaml/badge.svg)
+
+_Version 0.3.5 highlights: hardened QML load test error handling and cleanup._
 
 > **"Unified Event Horizon: Chronology, Atmosphere, and Warnings"**
 

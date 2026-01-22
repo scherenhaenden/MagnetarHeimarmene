@@ -11,7 +11,12 @@ TestCase {
 
     function test_mainViewLoads() {
         const component = Qt.createComponent("main.qml");
-        compare(component.status, Component.Ready, component.errorString());
+        if (component.status !== Component.Ready) {
+            const errorMessage = "Failed to load component: " + component.errorString();
+            console.error(errorMessage);
+            fail(errorMessage);
+            return;
+        }
 
         let instance = null;
         try {
@@ -20,6 +25,8 @@ TestCase {
         } finally {
             if (instance) {
                 instance.destroy();
+            } else {
+                console.warn("Instance was not created, nothing to destroy.");
             }
         }
     }
