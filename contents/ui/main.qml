@@ -21,7 +21,7 @@ PlasmoidItem {
     }
 
     // The main view when the widget is expanded
-    fullRepresentation: PlasmaComponents.Panel {
+    fullRepresentation: PlasmaComponents.Frame {
         // Use gridUnit for resolution independence instead of fixed pixels
         implicitWidth: Kirigami.Units.gridUnit * 20
         implicitHeight: Kirigami.Units.gridUnit * 30

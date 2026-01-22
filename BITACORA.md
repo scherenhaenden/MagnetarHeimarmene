@@ -98,3 +98,22 @@
 **Entry:** Version bump to 0.3.2.
 *   **Version Update:** Bumped version to `0.3.2` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
 *   **Project Docs:** Added a changelog entry in `projects/magnetar_heimarmene.project.yml` for version tracking.
+---
+**Timestamp:** 2026-01-22 09:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Plasma 6 UI component fix and QML load test.
+*   **UI Fix:** Replaced deprecated `PlasmaComponents.Panel` with `PlasmaComponents.Frame` in `main.qml` for Plasma 6 compatibility.
+*   **Tests:** Added `tst_MainView.qml` to ensure the main view QML loads without component type errors.
+*   **Version Update:** Bumped version to `0.3.3` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+---
+**Timestamp:** 2026-01-22 10:00 UTC
+**Author:** Jules (AI Agent)
+**Entry:** QML test cleanup hardening.
+*   **Tests:** Updated `tst_MainView.qml` to use `try/finally` for guaranteed cleanup after instantiation.
+*   **Version Update:** Bumped version to `0.3.4` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+---
+**Timestamp:** 2026-01-22 10:20 UTC
+**Author:** Jules (AI Agent)
+**Entry:** QML load test error handling.
+*   **Tests:** Added error handling and warnings to `tst_MainView.qml` for component load failures and null instantiation.
+*   **Version Update:** Bumped version to `0.3.5` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
