@@ -78,7 +78,7 @@
 **Author:** Jules (AI Agent)
 **Entry:** Weather display unit alignment.
 *   **UI Adjustment:** Updated weather summary rendering to derive temperature units from the DataEngine payload instead of hardcoding Celsius.
-*   **Version Update:** Bumped version to `0.3.2` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+*   **Version Update:** Bumped version to `0.3.1` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
 ---
 **Timestamp:** 2026-01-21 14:33 UTC
 **Author:** Jules (AI Agent)
@@ -97,3 +97,4 @@
 **Author:** Jules (AI Agent)
 **Entry:** Version bump to 0.3.2.
 *   **Version Update:** Bumped version to `0.3.2` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+*   **Project Docs:** Added a changelog entry in `projects/magnetar_heimarmene.project.yml` for version tracking.
