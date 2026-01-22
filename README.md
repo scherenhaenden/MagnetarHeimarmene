@@ -1,6 +1,6 @@
 # Magnetar Heimarmene
 
-![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.3.1-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green) ![Build Status](https://github.com/scherenhaenden/MagnetarHeimarmene/actions/workflows/release.yaml/badge.svg)
+![Status](https://img.shields.io/badge/Status-Pre--Alpha-orange) ![Version](https://img.shields.io/badge/Version-0.3.2-blue) ![Plasma](https://img.shields.io/badge/Plasma-6-green) ![Build Status](https://github.com/scherenhaenden/MagnetarHeimarmene/actions/workflows/release.yaml/badge.svg)
 
 > **"Unified Event Horizon: Chronology, Atmosphere, and Warnings"**
 
@@ -59,6 +59,12 @@ Magnetar Heimarmene unifies:
 *   **QML / QtQuick:** For the "Event Horizon" user interface.
 *   **JavaScript:** For "The Singularity" logic core.
 *   **Plasma 6 API:** For deep integration with the desktop environment.
+
+## 📚 Info Docs
+
+*   [KDE Plasma 6 Porting Guide](https://develop.kde.org/docs/plasma/shells/plasma6-porting/)
+*   [Kirigami Components](https://develop.kde.org/frameworks/kirigami/)
+*   [KPackage Metadata](https://develop.kde.org/docs/plasma/packaging/)
 
 ## 🤝 Contributing
 

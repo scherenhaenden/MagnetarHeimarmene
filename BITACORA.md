@@ -85,3 +85,16 @@
 **Entry:** Project YAML compatibility restoration and test workflow blocker.
 *   **Project YAML:** Restored `metadata` and `stakeholders` sections in `projects/magnetar_heimarmene.project.yml` for canonical compatibility.
 *   **Blocker:** Logged `blocker-test-debug-qmltestrunner` noting `test.yml` debug step checks `qml` while tests run `qmltestrunner`. Kept `test-v2.yml` pending validation of `qmltestrunner` availability.
+---
+**Timestamp:** 2026-01-21 16:10 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Plasma 6/KF6 compatibility sweep and doc links.
+*   **Metadata:** Added Plasma 6 minimum API version metadata and removed legacy service types in `metadata.json`.
+*   **UI/QML:** Switched to Kirigami theme/units and Plasma5Support DataSource to avoid Plasma 6 incompatibilities.
+*   **Documentation:** Added Plasma 6 porting reference links to `README.md`.
+---
+**Timestamp:** 2026-01-21 16:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Version bump to 0.3.2.
+*   **Version Update:** Bumped version to `0.3.2` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+*   **Project Docs:** Added a changelog entry in `projects/magnetar_heimarmene.project.yml` for version tracking.
