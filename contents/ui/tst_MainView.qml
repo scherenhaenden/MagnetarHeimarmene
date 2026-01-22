@@ -13,11 +13,14 @@ TestCase {
         const component = Qt.createComponent("main.qml");
         compare(component.status, Component.Ready, component.errorString());
 
-        const instance = component.createObject(null);
-        verify(instance !== null, "Main view should instantiate");
-
-        if (instance) {
-            instance.destroy();
+        let instance = null;
+        try {
+            instance = component.createObject(null);
+            verify(instance !== null, "Main view should instantiate");
+        } finally {
+            if (instance) {
+                instance.destroy();
+            }
         }
     }
 }
