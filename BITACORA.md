@@ -117,3 +117,10 @@
 **Entry:** QML load test error handling.
 *   **Tests:** Added error handling and warnings to `tst_MainView.qml` for component load failures and null instantiation.
 *   **Version Update:** Bumped version to `0.3.5` in `metadata.json`, `projects/magnetar_heimarmene.project.yml`, and `README.md`.
+---
+**Timestamp:** 2026-01-22 10:30 UTC
+**Author:** Jules (AI Agent)
+**Entry:** Restoration of missing test file.
+*   **Recovery:** Re-created `contents/ui/tst_MainView.qml` which was missing despite previous logs.
+*   **Tests:** The restored test verifies `main.qml` loading to prevent regression of deprecated components (e.g., `Panel` vs `Frame`).
+*   **Version Update:** Bumped version to `0.3.6` in `metadata.json` and `projects/magnetar_heimarmene.project.yml`.

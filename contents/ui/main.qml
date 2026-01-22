@@ -21,6 +21,7 @@ PlasmoidItem {
     }
 
     // The main view when the widget is expanded
+    // Fixed: Use Frame instead of deprecated Panel to resolve "PlasmaComponents.Panel is not a type"
     fullRepresentation: PlasmaComponents.Frame {
         // Use gridUnit for resolution independence instead of fixed pixels
         implicitWidth: Kirigami.Units.gridUnit * 20
