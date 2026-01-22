@@ -6,6 +6,7 @@
     *   Test date parsing.
     *   Test conflict detection algorithms.
     *   Test weather data normalization.
+*   **QML Load Tests (`tst_MainView.qml`):** Ensure the main view QML loads and instantiates without component type errors.
 *   **Visual Verification (Manual):** verify the QML rendering in `plasmoidviewer`.
 
 ## 2. Code Coverage

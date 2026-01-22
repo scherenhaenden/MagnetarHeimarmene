@@ -7,9 +7,10 @@ stakeholders:
     role: Product Owner
   - name: Jules
     role: Lead Engineer (AI)
-version: 0.3.2
+version: 0.3.3
 changelog:
   - "Version 0.3.2: Updated metadata and documentation for Plasma 6 compatibility."
+  - "Version 0.3.3: Replaced deprecated PlasmaComponents.Panel usage and added a QML load test."
 milestones:
   - id: ms-01
     name: "Phase A: The Skeleton"
